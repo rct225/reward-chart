@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
+import Rewards from './util/Rewards';
 import './App.css';
 import StartBehaviors from './components/StartBehaviors/StartBehaviors';
 import Homework from './components/Homework/Homework';
@@ -8,14 +9,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startBehaviors: [
-        {
-          id: 1,
-          name: "Clean Room",
-          points: 10
-        }
-      ]
+      startBehaviors: []
     }
+  }
+
+  componentDidMount() {
+    Rewards.getBehaviors().then(behaviors => {
+      this.setState({ startBehaviors: behaviors })
+    });
   }
 
   render() {
