@@ -1,5 +1,6 @@
 import React from 'react';
 // import './Behavior.css';
+import Rewards from '../../util/Rewards';
 
 class RewardForm extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class RewardForm extends React.Component {
 
   handleSubmit(event) {
     console.log('Your favorite flavor is: ' + this.state.behaviorId);
-    event.preventDefault();
+    // event.preventDefault();
+    console.log(this.state);
+    Rewards.createReward(this.state);
   }
 
 
