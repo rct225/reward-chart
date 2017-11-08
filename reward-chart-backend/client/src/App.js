@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Rewards from './util/Rewards';
 import './App.css';
 import StartBehaviors from './components/StartBehaviors/StartBehaviors';
-import Homework from './components/Homework/Homework';
+import RewardForm from './components/RewardForm/RewardForm';
+// import Homework from './components/Homework/Homework';
 
 class App extends Component {
   constructor(props) {
@@ -30,8 +31,13 @@ class App extends Component {
         <div className="App">
           <div className="App-rewards row">
             <StartBehaviors behaviors={this.state.startBehaviors} />
-            <Homework />
           </div>
+          <div className="row">
+            <RewardForm behaviors={this.state.startBehaviors} />
+          </div>
+          {/*<div className="row">
+            <Homework />
+          </div>*/}
         </div>
       </div>
     );
